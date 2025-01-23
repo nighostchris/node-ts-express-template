@@ -1,0 +1,26 @@
+# OS metadata
+.DS_Store
+Thumbs.db
+
+# Yarn
+yarn.lock
+
+# Dependency Directory
+node_modules
+
+# Environment Variables
+.env**
+!.env.example
+
+# Ignore built ts files
+dist
+
+# Generated Reports
+coverage
+generated
+
+# IDE Settings
+.idea
+*.iml
+.vscode
+.vscode/*

@@ -1,0 +1,24 @@
+{
+  "extends": "./tsconfig.paths.json",
+  "compilerOptions": {
+    "strict": true,
+    "lib": ["ESNext"],
+    "sourceMap": true,
+    "target": "ESNext",
+    "module": "ESNext",
+    "outDir": "./dist/",
+    "alwaysStrict": true,
+    "importHelpers": true,
+    "noImplicitAny": true,
+    "esModuleInterop": true,
+    "preserveConstEnums": true,
+    "moduleResolution": "Bundler",
+    "noUncheckedIndexedAccess": true,
+    "noFallthroughCasesInSwitch": true,
+    "types": ["node", "vitest/globals"],
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true
+  },
+  "exclude": ["built/**/*", "node_modules/**/*"],
+  "include": ["build.ts", "src/**/*", "tests/**/*"]
+}

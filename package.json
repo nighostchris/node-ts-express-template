@@ -1,0 +1,43 @@
+{
+  "name": "node-ts-express-template",
+  "version": "0.0.0",
+  "description": "Immediately clonable web server template with Node.js + Typescript + Express",
+  "type": "module",
+  "engines": {
+    "node": ">=22.12.0",
+    "npm": ">=10.9.0"
+  },
+  "scripts": {
+    "build": "rm -rf dist && tsx build.ts",
+    "dev": "node --import tsx/esm -r dotenv/config --watch-path=src/ --watch-path=.env src/index.ts",
+    "start": "node -r dotenv/config dist/index.cjs",
+    "test": "vitest --coverage",
+    "test:ci": "vitest run"
+  },
+  "author": "Chris Liu <chrisliupascal@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "@eslint/js": "^9.18.0",
+    "@types/node": "^22.10.10",
+    "@types/supertest": "^6.0.2",
+    "dotenv": "^16.4.7",
+    "esbuild": "^0.24.0",
+    "esbuild-plugin-pino": "^2.2.1",
+    "eslint": "^9.18.0",
+    "eslint-config-prettier": "^10.0.1",
+    "eslint-plugin-prettier": "^5.2.3",
+    "globals": "^15.14.0",
+    "pino": "^9.6.0",
+    "pino-pretty": "^13.0.0",
+    "prettier": "^3.4.2",
+    "supertest": "^7.0.0",
+    "tinyglobby": "^0.2.10",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.3",
+    "typescript-eslint": "^8.21.0",
+    "vitest": "^3.0.4"
+  },
+  "dependencies": {
+    "express": "^5.0.1"
+  }
+}
