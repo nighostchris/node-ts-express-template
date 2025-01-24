@@ -23,11 +23,10 @@ export default defineConfig({
   resolve: {
     alias: {
       // Please align it with tsconfig.paths.json
-      "@api/*": path.resolve(__dirname, "./src/api/*"),
+      "@api": path.resolve(__dirname, "./src/api"),
       "@config": path.resolve(__dirname, "./src/config.ts"),
       "@logger": path.resolve(__dirname, "./src/logger.ts"),
-      "@server": path.resolve(__dirname, "./src/server/index.ts"),
-      "@server/*": path.resolve(__dirname, "./src/server/*"),
+      "@server": path.resolve(__dirname, "./src/server"),
     },
   },
 });

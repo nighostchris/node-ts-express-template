@@ -8,6 +8,7 @@ import logMiddleware from "./middlewares/log";
 
 export const setup = () => {
   const server = express();
+
   // Cross origin resource sharing
   server.use(cors());
   // Parse cookie in request so that endpoint can access it through req.cookie
@@ -19,8 +20,9 @@ export const setup = () => {
   // Middleware to handle request logging
   server.use(logMiddleware);
   // Web server routing section
-  server.use("/", testRouter);
+  server.use("/api/v1", testRouter);
   // Middleware to handle errors
   server.use(errorMiddleware);
+
   return server;
 };
