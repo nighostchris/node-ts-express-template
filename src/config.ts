@@ -1,26 +1,37 @@
 import { Static, Type } from "@sinclair/typebox";
-import { TypeCompiler } from "@sinclair/typebox/compiler";
+import dayjs from "dayjs";
 
-import { formatValidationError } from "@utils/validations";
+import { validate } from "@utils/validations";
 
 const schema = Type.Object({
   // General
   NODE_ENV: Type.String(),
-  LOG_LEVEL: Type.String(),
+  LOG_LEVEL: Type.Union(
+    [
+      Type.Literal("fatal"),
+      Type.Literal("error"),
+      Type.Literal("warn"),
+      Type.Literal("info"),
+      Type.Literal("debug"),
+      Type.Literal("trace"),
+      Type.Literal("silent"),
+    ],
+    { default: "debug" },
+  ),
   // Web Server
   WEB_SERVER_HOST: Type.String(),
-  WEB_SERVER_PORT: Type.String(),
+  WEB_SERVER_PORT: Type.String({
+    minLength: 0,
+    pattern: "^(?:0|[1-9][0-9]{0,4}|6[0-4][0-9]{3}|65[0-4][0-9]{2}|655[0-2][0-9]{1}|6553[0-5])$",
+  }),
 });
 
-const validator = TypeCompiler.Compile(schema);
-
-const errors = [...validator.Errors(process.env)];
-
-if (errors.length > 0) {
-  for (const error of errors) {
-    console.error(formatValidationError(error));
+try {
+  validate(schema, process.env);
+} catch (error: any) {
+  for (const e of error) {
+    console.log(`[${dayjs().format("YYYY-MM-DD HH:mm:ss.SSS")}] ERROR: ${e}`);
   }
-
   process.exit(1);
 }
 
