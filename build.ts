@@ -1,6 +1,6 @@
 import { build } from "esbuild";
-import { glob } from "tinyglobby";
 import esbuildPluginPino from "esbuild-plugin-pino";
+import { glob } from "tinyglobby";
 
 const entryPoints = await glob(["src/**/*.ts"], { ignore: ["src/**/*.d.ts"] });
 

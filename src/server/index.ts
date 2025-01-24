@@ -1,10 +1,10 @@
+import cookieParser from "cookie-parser";
 import cors from "cors";
 import express from "express";
-import cookieParser from "cookie-parser";
 
 import testRouter from "@api/test/routes";
-import logMiddleware from "./middlewares/log";
 import errorMiddleware from "./middlewares/error";
+import logMiddleware from "./middlewares/log";
 
 export const setup = () => {
   const server = express();
