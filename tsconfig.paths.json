@@ -6,7 +6,8 @@
       "@config": ["./src/config.ts"],
       "@logger": ["./src/logger.ts"],
       "@server": ["./src/server/index.ts"],
-      "@server/*": ["./src/server/*"]
+      "@server/*": ["./src/server/*"],
+      "@utils/*": ["./src/utils/*"]
     }
   }
 }

@@ -27,6 +27,7 @@ export default defineConfig({
       "@config": path.resolve(__dirname, "./src/config.ts"),
       "@logger": path.resolve(__dirname, "./src/logger.ts"),
       "@server": path.resolve(__dirname, "./src/server"),
+      "@utils": path.resolve(__dirname, "./src/utils"),
     },
   },
 });

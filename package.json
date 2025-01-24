@@ -43,6 +43,7 @@
     "vitest": "^3.0.4"
   },
   "dependencies": {
+    "@sinclair/typebox": "^0.34.14",
     "cookie-parser": "^1.4.7",
     "cors": "^2.8.5",
     "express": "^5.0.1",

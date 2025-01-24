@@ -24,7 +24,7 @@ export default [
         {
           groups: [
             ["^node:", "^@?\\w"], // Node.js built-in and external dependencies
-            ["^@api(/.*|$)", "^@config(/.*|$)", "^@logger(/.*|$)", "^@server(/.*|$)", "^\\."], // Local imports
+            ["^@api(/.*|$)", "^@config(/.*|$)", "^@logger(/.*|$)", "^@server(/.*|$)", "^@utils(/.*|$)", "^\\."], // Local imports
           ],
         },
       ],

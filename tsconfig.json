@@ -9,7 +9,6 @@
     "outDir": "./dist/",
     "alwaysStrict": true,
     "importHelpers": true,
-    "noImplicitAny": true,
     "esModuleInterop": true,
     "preserveConstEnums": true,
     "moduleResolution": "Bundler",
